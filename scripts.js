@@ -3,7 +3,7 @@ window.setInterval(function(){
     
 
     document.getElementById("demo").innerHTML = "144 STR: ";
-    let lastDay = new Date(2019,10,11,11,25,04);
+    let lastDay = new Date(2019,10,11,11,25,57);
     if( (lastDay.getMonth()+1) < 10 )var dateLast = lastDay.getDate() + ".0" + (lastDay.getMonth()+1) + "." + lastDay.getFullYear();
     else var dateLast = lastDay.getDate() + "." + (lastDay.getMonth()+1) + "." + lastDay.getFullYear();
     let timeLast = lastDay.getHours() + ":" + lastDay.getMinutes() + ":" + lastDay.getSeconds();
@@ -43,7 +43,7 @@ function onLoadFunction(){
     
 
     document.getElementById("demo").innerHTML = "144 STR: ";
-    let lastDay = new Date(2019,10,11,11,25,04);
+    let lastDay = new Date(2019,10,11,11,25,57);
     if( (lastDay.getMonth()+1) < 10 )var dateLast = lastDay.getDate() + ".0" + (lastDay.getMonth()+1) + "." + lastDay.getFullYear();
     else var dateLast = lastDay.getDate() + "." + (lastDay.getMonth()+1) + "." + lastDay.getFullYear();
     let timeLast = lastDay.getHours() + ":" + lastDay.getMinutes() + ":" + lastDay.getSeconds();
