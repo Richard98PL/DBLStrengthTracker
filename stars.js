@@ -2,7 +2,7 @@
     var colours=new Array('red', 'gold', 'pink', 'aqua', 'lightyellow', 'yellow'); // colours of the stars
     var minisize=15; // smallest size of stars in pixels
     var maxisize=15; // biggest size of stars in pixels
-    var stars=65; // maximum number of stars on screen
+    var stars=500; // maximum number of stars on screen
     var over_or_under="over"; // set to "over" for stars to always be on top, or "under" to allow them to float behind other objects
     
     /*****************************
