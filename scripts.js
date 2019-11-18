@@ -5,7 +5,7 @@ window.setInterval(function(){
     str[143] = null;
     str[144]= new Date(2019,10,11,11,25,57);
     str[145]= new Date(2019,10,14,23,53,25);
-    str[146]= new Date(2019,10,18,22,09,13);
+    str[146]= new Date(2019,10,18,22,11,13);
     str[147]= null;
     str[148]= null;
     str[149]= null;
