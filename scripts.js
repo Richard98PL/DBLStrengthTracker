@@ -58,6 +58,8 @@ function formattedDateTime(lastDay){
 
     if( (lastDay.getMonth()+1) < 10 )var dateLast = lastDay.getDate() + ".0" + (lastDay.getMonth()+1) + "." + lastDay.getFullYear();
     else var dateLast = lastDay.getDate() + "." + (lastDay.getMonth()+1) + "." + lastDay.getFullYear();
+    let theHour = lastDay.getHours();
+	  if(theHour<10) theHour = '0' + theHour;
     let timeLast = lastDay.getHours() + ":" + lastDay.getMinutes() + ":" + lastDay.getSeconds();
     let dateTimeLast = dateLast +' '+timeLast;
 
