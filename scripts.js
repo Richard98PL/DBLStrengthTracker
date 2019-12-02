@@ -12,7 +12,7 @@ window.setInterval(function(){
     str[150]= null;
     
     let alreadySetCurrentStr = false;
-    for( let i = 144; i <= 150 ; i++){
+    for( let i = 144; i <= 151 ; i++){
       
       //currentstr
       if(str[i]==null && !alreadySetCurrentStr){
@@ -76,97 +76,7 @@ function formattedDateTime(givenDate){
 	  return "Not Yet.";
   }
 }
-
-
-    
-function onLoadFunction(){
-    
-    // daty wbicia skilli
-    let str = new Array(151);
-    str[143] = null;
-    str[144]= new Date(2019,10,11,11,25,57);
-    str[145]= null;
-    str[146]= null;
-    str[147]= null;
-    str[148]= null;
-    str[149]= null;
-    str[150]= null;
-    
-    let alreadySetCurrentStr = false;
-    for( let i = 144; i <= 150 ; i++){
-      
-      //currentstr
-      if(str[i]==null && !alreadySetCurrentStr){
-        document.getElementById("currentstr").innerHTML = 'Current strength : '+ (i-1);
-        alreadySetCurrentStr = true;
-      }
-
-      //stop currenstr
-
-      document.getElementById("now").innerHTML = 'Now : ' + formattedDateTimeNow();
-      //end curretnDate
-
-      let div = document.getElementById( 'str' + i.toString() );
-      div.innerHTML = '';
-      div.innerHTML = i + " STR : ";
-      if(str[i]!=null){
-        div.innerHTML += formattedDateTime(str[i]) + "<br />";
-      }else{
-        div.innerHTML += 'NOT YET';
-      }
-      
-      if(str[i]!=null){
-        if(str[i+1]!=null){
-          div.innerHTML += 'End time: ' +formattedDateTime(str[i+1]) + '<br />';
-          div.innerHTML += 'It took ' + "<br />";
-          let staticTimeDiff = str[i+1] - str[i];
-          convertMiliseconds(staticTimeDiff,"xD",i.toString());
-        }else {
-        div.innerHTML += "Time passed " + "<br />";
-        let now = new Date();
-        var timeDiff = now - str[i]; //in ms
-        convertMiliseconds(timeDiff,"xD",i.toString());
-        }
-
-      } 
-    }
-
-};
-
-
-
-function convertMiliseconds(miliseconds, format,elementId) {
-  var days, hours, minutes, seconds, total_hours, total_minutes, total_seconds;
-  
-  total_seconds = parseInt(Math.floor(miliseconds / 1000));
-  total_minutes = parseInt(Math.floor(total_seconds / 60));
-  total_hours = parseInt(Math.floor(total_minutes / 60));
-  days = parseInt(Math.floor(total_hours / 24));
-
-  seconds = parseInt(total_seconds % 60);
-  minutes = parseInt(total_minutes % 60);
-  hours = parseInt(total_hours % 24);
-  
-  switch(format) {
-	case 's':
-		return total_seconds;
-	case 'm':
-		return total_minutes;
-	case 'h':
-		return total_hours;
-	case 'd':
-		return days;
-	default:
-        document.getElementById('str' + elementId).innerHTML += "Days : " + days + "<br />";
-        document.getElementById('str' + elementId).innerHTML += "Hours : " + hours + "<br />";
-        document.getElementById('str' + elementId).innerHTML += "Minutes : " + minutes + "<br />";
-        document.getElementById('str' + elementId).innerHTML += "Seconds : " + seconds + "<br />";
-
-  }
-}
-
-
-
+   
 var audio = new Audio('demo.mp3');
 audio.addEventListener('ended', function() {
   this.currentTime = 0;
