@@ -22,7 +22,7 @@ window.setInterval(function(){
 
       //stop currenstr
 
-      document.getElementById("now").innerHTML = 'Now : ' + formattedDateTimeNow();
+      document.getElementById("now").innerHTML = 'Now : ' + formattedDateTime(new Date());
       //end curretnDate
 
       let div = document.getElementById( 'str' + i.toString() );
@@ -52,46 +52,32 @@ window.setInterval(function(){
 
   }, 1000);
 
-function formattedDateTime(lastDay){
+function formattedDateTime(givenDate){
 
-  if(lastDay != null){
-
-    if( (lastDay.getMonth()+1) < 10 )var dateLast = lastDay.getDate() + ".0" + (lastDay.getMonth()+1) + "." + lastDay.getFullYear();
-    else var dateLast = lastDay.getDate() + "." + (lastDay.getMonth()+1) + "." + lastDay.getFullYear();
-    let theHour = lastDay.getHours();
-	  if(theHour<10) theHour = '0' + theHour;
-    let timeLast = theHour + ":" + lastDay.getMinutes() + ":" + lastDay.getSeconds();
-    let dateTimeLast = dateLast +' '+timeLast;
-
-    return dateTimeLast;
-  }
-  else return 'Not yet';
-}
-
-function formattedDateTimeNow(){
+   if(givenDate != null){
+    let year = givenDate.getFullYear();
+    let month = givenDate.getMonth();
+    let day = givenDate.getDate();
+    let hour = givenDate.getHours();
+    let minute = givenDate.getMinutes();
+    let seconds = givenDate.getSeconds();
     
-  let today = new Date();
-
-    //building a date with "0"
-    if( (today.getMonth()+1) < 10 )var date = today.getDate() + ".0" + (today.getMonth()+1) + "." + today.getFullYear();
-    else var date = today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
-
-    //buidling a time with "0"
-
-    if( today.getSeconds() < 10 )var seconds = "0" + today.getSeconds();
-    else var seconds = today.getSeconds();
-
-    if( today.getMinutes() < 10) var minutes = "0"  + today.getMinutes();
-    else var minutes = today.getMinutes();
-
-    if( today.getHours() < 10) var hours = "0" + today.getHours();
-    else var hours = today.getHours();
-
-    let time = hours + ":" + minutes + ":" + seconds;
-    let dateTime = date + " " + time;
-
-    return dateTime;
+    month = givenDate.getMonth() + 1;
+    if(month > 12)month=1;
+    if( (givenDate.getMonth()+1) < 10 ) month = "0" + month;
+    if( (givenDate.getDate()) < 10 ) day = "0" + day;
+    if( (givenDate.getHours()) < 10 ) hour = "0" + hour;
+    if( (givenDate.getMinutes()) < 10 ) minute = "0" + minute;
+    if( (givenDate.getSeconds()) < 10 ) seconds = "0" + seconds;
+	
+    let formattedDateTime = day+"."+month+"."+year+" "+hour+":"+minute+":"+seconds;
+    return formattedDateTime;
+  }else{
+	  return "Not Yet.";
+  }
 }
+
+
     
 function onLoadFunction(){
     
