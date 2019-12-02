@@ -12,7 +12,7 @@ window.setInterval(function(){
     str[150]= null;
     
     let alreadySetCurrentStr = false;
-    for( let i = 144; i <= 151 ; i++){
+    for( let i = 144; i <= 150 ; i++){
       
       //currentstr
       if(str[i]==null && !alreadySetCurrentStr){
