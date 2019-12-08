@@ -9,7 +9,7 @@ window.setInterval(function(){
     str[147] = new Date(2019,10,22,09,55,25);
     str[148] = new Date(2019,10,27,10,18,17);
     str[149] = new Date(2019,11,02,10,02,13);
-    str[150] = null;
+    str[150] = new Date(2019,11,08,16,03,45);
     str[151] = null;
     let div = document.getElementById('str144');
 
